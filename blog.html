@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="hero-section-other">
+</div>
+
+<div class="section background">
+  <div class="wrapper">
+    <div class="heading-centered">
+      <h1 class="body-heading">Blog</h1>
+    </div>
+    <div class="w-layout-grid more-features-grid">
+      {% for post in site.posts %}
+
+        <div class="more-feat-text-div">
+          <h2 class="feat-big-text"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <div class="small-text">{{ post.date | date_to_string }}</div>
+          <p>{{ post.excerpt }}</p>
+          <a href="{{ post.url }}" class="button w-button">Read more</a>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
